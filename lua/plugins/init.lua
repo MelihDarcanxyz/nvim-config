@@ -13,20 +13,20 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- Followed the packer.nvim readme
-require('lazy').startup(function(use)
+require('lazy').setup({
     -- Packer can manage itself
-    'wbthomason/packer.nvim'
+    'wbthomason/packer.nvim',
 
     -- To avoid installing specific themes
-    'RRethy/nvim-base16'
+    'RRethy/nvim-base16',
 
     -- Lightweight powerline
-    'itchyny/lightline.vim'
+    'itchyny/lightline.vim',
 
     -- Oh god
-    'jiangmiao/auto-pairs'
+    'jiangmiao/auto-pairs',
 
-    {'nvim-treesitter/nvim-treesitter', build = ':TSUpdate'}
+    {'nvim-treesitter/nvim-treesitter', build = ':TSUpdate'},
 
     {'glepnir/dashboard-nvim',
         event = 'VimEnter',
@@ -36,7 +36,7 @@ require('lazy').startup(function(use)
         }
         end,
         dependencies = { {'nvim-tree/nvim-web-devicons'}}
-    }
-end)
+    },
+})
 
 require 'plugins.config'
